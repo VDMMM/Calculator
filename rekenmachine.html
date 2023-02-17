@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<style>
+		body {
+			background-color: transparent;
+			font-family: Arial;
+		}
+
+		.calculator {
+			width: 270px;
+			margin: 0px auto;
+			background-color: #444;
+			border-radius: 7px;
+			display: inline-block;
+			padding: 7px;
+			text-align: center;
+		}
+
+		.calculator button {
+			background-color: #888;
+			border: none;
+			border-radius: 7px;
+			color: white;
+			font-size: 22px;
+			height: 50px;
+			margin: 5px;
+			width: 50px;
+		}
+
+		.calculator button:hover {
+			background-color: #666;
+			cursor: pointer;
+		}
+
+		.calculator #result {
+			background-color: #555;
+			border: none;
+			border-radius: 5px;
+			color: white;
+			font-size: 48px;
+			height: 50px;
+			margin: 5px;
+			padding: 10px;
+			text-align: right;
+			width: 240px;
+		}
+
+		.calculator #clear {
+			background-color: #888;
+			color: white;
+			height: 60px;
+			margin: 5px;
+			width: 130px;
+		}
+
+		.calculator #clear:hover {
+			background-color: #666;
+			cursor: pointer;
+		}
+
+		.calculator #equals {
+			background-color: #ff7700;
+			color: white;
+			height: 50px;
+			margin: 3px;
+			width: 50px;
+		}
+
+		.calculator #equals:hover {
+			background-color: #dd6600;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div class="calculator">
+		<div id="result"></div>
+		<button onclick="addToResult('7')">7</button>
+		<button onclick="addToResult('8')">8</button>
+		<button onclick="addToResult('9')">9</button>
+		<button onclick="addToResult('/')">:</button>
+		<button onclick="addToResult('4')">4</button>
+		<button onclick="addToResult('5')">5</button>
+		<button onclick="addToResult('6')">6</button>
+		<button onclick="addToResult('*')">x</button>
+		<button onclick="addToResult('1')">1</button>
+		<button onclick="addToResult('2')">2</button>
+		<button onclick="addToResult('3')">3</button>
+		<button onclick="addToResult('-')">-</button>
+		<button onclick="addToResult('0')">0</button>
+		<button onclick="addToResult('.')">.</button>
+		<button onclick="clearResult()">C</button>
+		<button onclick="addToResult('+')">+</button>
+		<button id="equals" onclick="calculateResult()">=</button>
+	</div>
+
+	<script>
+		function addToResult(value) {
+			document.getElementById("result").innerHTML += value;
+		}
+
+		function clearResult() {
+			document.getElementById("result").innerHTML = "";
+		}
+
+		function calculateResult() {
+			var result = eval(document.getElementById("result").innerHTML);
+			document.getElementById("result").innerHTML = result;		
+                }
+
+	</script>
+</body>
+</html>
+
